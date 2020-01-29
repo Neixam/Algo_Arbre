@@ -1,5 +1,5 @@
 #include "tp2.h"
-
+/*
 void	affiche_arbre(Arbre a)
 {
 
@@ -11,7 +11,7 @@ void	affiche_arbre(Arbre a)
 	printf("%d ", a->valeur);
 	affiche_arbre(a->fg);
 	affiche_arbre(a->fd);
-}
+}*/
 
 int		main(int ac, char **av)
 {

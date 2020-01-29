@@ -11,7 +11,19 @@ typedef struct	noeud
 }				Noeud,
 				*Arbre;
 
+typedef struct	quelconque
+{
+	FILE	*in;
+	FILE	*out;
+	Arbre	qlc;
+	char	*in_name;
+	char	*out_name;
+	int		error_val;
+}				Qlc;
+
 Arbre			alloueNoeud(int val);
+char			*ft_strdup(char *s);
+int				ft_strlen(char *s);
 int				hauteur(Arbre a);
 int				nb_noeud(Arbre a);
 int				nb_interne(Arbre a);
@@ -20,5 +32,11 @@ int				nb_interne_2f(Arbre a);
 int				est_strict_bin(Arbre a);
 int				est_nombre(int c);
 int				creation_arbre(Arbre *a, FILE *file);
+int				construireArbreQuelconque(Arbre *a, FILE *in);
+
+int				parsing_enter(int ac, char **av, Qlc *data);
+void			init_data(Qlc *data);
+void			free_data(Qlc *data);
+void			freeArbre(Arbre a);
 
 #endif
