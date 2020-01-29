@@ -1,24 +1,28 @@
-NAME	=	exercice04
+NAME	=	../exercice04
 
-SRC		=	src/
+SRC	    =	src/
 
-CNT		=	main.c	\
-				\
+CNT	    =	$(SRC)main.c	    \
+			$(SRC)ft_base.c	    \
+			$(SRC)q_a.c 	    \
+			$(SRC)q_b.c 	    \
+           ../$(SRC)ex01.c      \
+           ../$(SRC)ex03.c      \
 
-OBJ		=	$(CNT:.c=.o)
+OBJ	    =	$(CNT:.c=.o)
 
 FLAGS	=	-Wall	\
-			-Werror	\
-#			-ansi	\
+		    -Werror	\
+		    -ansi	\
 
 HEADER	=	../includes/
 
-all		:	$(NAME)
+all	    :	$(NAME)
 
 $(NAME)	:	$(OBJ)
 	gcc $(FLAGS) $^ -o $(NAME) -I $(HEADER)
 
-%.o		:	%.c
+%.o	    :	%.c
 	gcc $(FLAGS) -o $@ -c $^ -I $(HEADER)
 
 clean	:
@@ -29,4 +33,4 @@ bclean	:
 
 fclean	:	clean bclean
 
-re		:	fclean all
+re	    :	fclean all
