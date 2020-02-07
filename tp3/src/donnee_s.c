@@ -3,7 +3,6 @@
 void	init_data(Rech *data)
 {
 	data->fichier = NULL;
-	data->f_nom = NULL;
 	data->err_val = 0;
 }
 

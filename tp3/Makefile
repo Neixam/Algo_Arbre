@@ -10,6 +10,8 @@ CNT		=	$(SRC)main.c		\
 			$(SRC)ex03.c		\
 			$(SRC)ex04.c		\
 			$(SRC)ex05.c		\
+			$(SRC)ex06.c		\
+			$(SRC)ex07.c		\
 
 HEADER	=	includes/
 
