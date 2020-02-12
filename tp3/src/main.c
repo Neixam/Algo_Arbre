@@ -34,42 +34,39 @@ int		main(int ac, char **av)
 		fclose(data.fichier);
 		ret = verif_bin_rech(a);
 		printf("%s : %s.\n", data.f_nom, (ret) ? "est binaire de recherche" : "n'est pas binaire de recherche");
-		if (ret)
-		{
-			tmp = Recherche(a, 25);
-			if (!tmp)
-				printf("\t25 n'est pas dans l'arbre\n");
-			else
-			{
-				printf("\t25 est dans l'arbre\n");
-				tmp = extrait(&a, 25);
-				if (tmp)
-				{
-					printf("\t%d n'est plus dans l'arbre\n", tmp->val);
-					free(tmp);
-				}
-			}
-			tmp1 = extraitMax(&a);
-			tmp = extraitMin(&a);
-			if (tmp)
-			{
-				printf("\t%d était la valeur minimal de l'arbre\n", tmp->val);
-				if (ajout(&a, tmp->val) == 0)
-					printf("\t%d est déjà dans l'arbre\n", tmp->val);
-				else
-					printf("\t%d est de nouveau la valeur minimal de l'arbre\n", tmp->val);
-				free(tmp);
-			}
-			if (tmp1)
-			{
-				printf("\t%d était la valeur maximal de l'arbre\n", tmp1->val);
-				if (ajout(&a, tmp1->val) == 0)
-					printf("\t%d est déjà dans l'arbre\n", tmp1->val);
-				else
-					printf("\t%d est de nouveau la valeur maximal de l'arbre\n", tmp1->val);
-				free(tmp1);
-			}
-		}
+		tmp = Recherche(a, 25);
+        if (!tmp)
+            printf("\t25 n'est pas dans l'arbre\n");
+        else
+        {
+            printf("\t25 est dans l'arbre\n");
+            tmp = extrait(&a, 25);
+            if (tmp)
+            {
+                printf("\t%d n'est plus dans l'arbre\n", tmp->val);
+                free(tmp);
+            }
+        }
+        tmp1 = extraitMax(&a);
+        tmp = extraitMin(&a);
+        if (tmp)
+        {
+            printf("\t%d était la valeur minimal de l'arbre\n", tmp->val);
+            if (ajout(&a, tmp->val) == 0)
+                printf("\t%d est déjà dans l'arbre\n", tmp->val);
+            else
+                printf("\t%d est de nouveau la valeur minimal de l'arbre\n", tmp->val);
+            free(tmp);
+        }
+        if (tmp1)
+        {
+            printf("\t%d était la valeur maximal de l'arbre\n", tmp1->val);
+            if (ajout(&a, tmp1->val) == 0)
+                printf("\t%d est déjà dans l'arbre\n", tmp1->val);
+            else
+                printf("\t%d est de nouveau la valeur maximal de l'arbre\n", tmp1->val);
+            free(tmp1);
+        }
 		libereArbre(a);
 		data.f_nom[15]++;
 	}
