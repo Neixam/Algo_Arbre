@@ -1,0 +1,9 @@
+digraph arbre {
+    nodge []
+    edge [];
+
+    n0 [label="<gauche> | <valeur> | <droit>"];
+    n0:gauche:c -> n1:valeur;
+    n1 [label="<gauche> | <valeur> | <droit>"];
+    
+}
